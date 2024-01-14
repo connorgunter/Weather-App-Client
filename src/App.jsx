@@ -1,12 +1,11 @@
-import { useState } from 'react'
-import './App.css'
-
+import Header from "./components/Header/header";
+// import Index from "./pages/weatherindex/weatherindex"
 function App() {
-return (
-  <>
-  <h1>Hello</h1>
-  </>
-)
+  return (
+    <div>
+      <Header />
+    </div>
+  );
 }
 
-export default App
+export default App;
