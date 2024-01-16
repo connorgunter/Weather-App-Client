@@ -1,7 +1,7 @@
 const Index = () => {
     return (
         <div>
-            <input>Search for Location Here</input>
+            <input placeholder="Search for Location Here"></input>
         </div>
     )
 }

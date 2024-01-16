@@ -1,9 +1,10 @@
 import Header from "./components/Header/header";
-// import Index from "./pages/weatherindex/weatherindex"
+import Main from "./components/Main/Main"
 function App() {
   return (
     <div>
       <Header />
+      <Main />
     </div>
   );
 }
