@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./weatherindex.css";
 import findLocation from "../../utilities/weather-service";
 const Index = () => {
   const [searchWeather, setSearchWeather] = useState("");
@@ -31,11 +32,25 @@ const Index = () => {
       </form>
       <div>
         {weather ? (
-            <>
-            <h1>Weather for: {weather.location.name} on {weather.forecast.forecastday[0].date}</h1>
-            <h2>Current Temp: {weather.current.temp_f}°F</h2>
-        </>
-        ) : <p>Nothing</p>}
+          <div className="weather-card">
+              <h2 className="current-temp">
+                {weather.current.temp_f}°F
+              </h2>
+              <hr/>
+            <div className="info-section">
+              <h1>
+                Weather for: {weather.location.name} on{" "}
+                {weather.forecast.forecastday[0].date}
+              </h1>
+              <h2>
+                Condition: {weather.current.condition.text}
+              </h2>
+              <h2>Wind Speed: {weather.current.wind_mph}</h2>
+            </div>
+          </div>
+        ) : (
+          <p>Nothing</p>
+        )}
       </div>
     </div>
   );

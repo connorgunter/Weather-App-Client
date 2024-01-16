@@ -1,0 +1,11 @@
+.weather-card {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+
+.current-temp {
+    font-size: 150px;
+}
