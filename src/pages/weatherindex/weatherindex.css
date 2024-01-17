@@ -9,3 +9,15 @@
 .current-temp {
   font-size: 150px;
 }
+
+.input-field {
+  box-sizing: border-box;
+  padding: 10px;
+  width: 200px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.search-box {
+  text-align: center;
+}

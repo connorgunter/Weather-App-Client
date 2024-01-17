@@ -1,7 +1,8 @@
 import { useState } from "react";
 import "./weatherindex.css";
 import findLocation from "../../utilities/weather-service";
-const Index = () => {
+const Index = ({favorites, setFavorites}) => {
+  // const [favorites, setFavorites] = useState([])
   const [searchWeather, setSearchWeather] = useState("");
   const [weather, setWeather] = useState(null);
 
@@ -20,15 +21,20 @@ const Index = () => {
     setSearchWeather(e.target.value);
   };
 
+  const saveToFavorites = () => {
+    setFavorites(prevFavorites => [...prevFavorites, weather])
+  }
+  console.log(favorites)
+
   return (
     <div>
-      <form onSubmit={getLocation}>
+      <form className="search-box" onSubmit={getLocation}>
         <input
           className="input-field"
           value={searchWeather}
           onChange={handleChange}
           placeholder="Search for Location Here"
-        />
+        /><br/><br/>
         <button type="submit">Search Weather By Location</button>
       </form>
       <div>
@@ -46,7 +52,7 @@ const Index = () => {
                 Wind Speed: {weather.current.wind_mph} mph, Blowing{" "}
                 {weather.current.wind_dir}
               </h2>
-              <button>Save to Favorites</button>
+              <button onClick={saveToFavorites}>Save to Favorites</button>
             </div>
           </div>
         ) : (
