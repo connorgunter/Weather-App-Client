@@ -14,3 +14,8 @@ export async function searchLocation(q) {
     console.log("Invalid Location");
   }
 }
+
+
+export async function saveFavorites() {
+  const favoritesData = await fetch(`${config.BASE_URL}/favorites`)
+}
