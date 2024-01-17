@@ -24,6 +24,7 @@ const Index = () => {
     <div>
       <form onSubmit={getLocation}>
         <input
+          className="input-field"
           value={searchWeather}
           onChange={handleChange}
           placeholder="Search for Location Here"
@@ -41,7 +42,11 @@ const Index = () => {
                 {weather.forecast.forecastday[0].date}
               </h1>
               <h2>Condition: {weather.current.condition.text}</h2>
-              <h2>Wind Speed: {weather.current.wind_mph}</h2>
+              <h2>
+                Wind Speed: {weather.current.wind_mph} mph, Blowing{" "}
+                {weather.current.wind_dir}
+              </h2>
+              <button>Save to Favorites</button>
             </div>
           </div>
         ) : (
