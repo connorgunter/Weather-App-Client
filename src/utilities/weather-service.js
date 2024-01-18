@@ -9,3 +9,13 @@ export default async function findLocation(q) {
     throw err;
   }
 }
+
+export async function saveFavoriteLocation() {
+  try {
+    const fav = await weatherAPI.saveFavorites()
+    return fav
+  } catch (err) {
+    console.log(err.message)
+    throw err
+  }
+}

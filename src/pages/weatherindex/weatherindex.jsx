@@ -1,11 +1,17 @@
 import { useState } from "react";
 import "./weatherindex.css";
 import findLocation from "../../utilities/weather-service";
+import { saveFavoriteLocation } from "../../utilities/weather-service";
+import { useAuth0 } from "@auth0/auth0-react";
 const Index = ({favorites, setFavorites}) => {
   // const [favorites, setFavorites] = useState([])
   const [searchWeather, setSearchWeather] = useState("");
   const [weather, setWeather] = useState(null);
-
+  const { user, isLoading: loadingAuth, isAuthenticated } = useAuth0();
+  if (isAuthenticated){
+  const authId = user.sub.substring(user.sub.indexOf("|") + 1);
+  console.log(authId)
+  }
   const getLocation = async (e) => {
     e.preventDefault();
     try {
@@ -23,6 +29,9 @@ const Index = ({favorites, setFavorites}) => {
 
   const saveToFavorites = () => {
     setFavorites(prevFavorites => [...prevFavorites, weather])
+    if (isAuthenticated){
+      setFavorites(id=authId)
+    }
   }
   console.log(favorites)
 

@@ -17,5 +17,16 @@ export async function searchLocation(q) {
 
 
 export async function saveFavorites() {
-  const favoritesData = await fetch(`${config.BASE_URL}/favorites`)
+  const favoritesData = await fetch(`${config.FAVORITES_URL}`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: favoritesData,
+  });
+  if (response.ok) {
+    return response.json();
+  } else {
+    throw new Error("Invalid request");
+  }
 }
