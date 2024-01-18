@@ -5,7 +5,6 @@ import LoginButton from "../Auth/LoginButton";
 import LogoutButton from "../Auth/LogoutButton";
 const Header = () => {
   const { user, isAuthenticated, isLoading } = useAuth0();
-  console.log(user);
   return (
     <header>
       <nav className="left-nav">

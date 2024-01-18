@@ -10,12 +10,22 @@ export default async function findLocation(q) {
   }
 }
 
-export async function saveFavoriteLocation() {
+export async function saveFavoriteLocation(data) {
   try {
-    const fav = await weatherAPI.saveFavorites()
+    const fav = await weatherAPI.saveFavorites(data)
     return fav
   } catch (err) {
     console.log(err.message)
     throw err
+  }
+}
+
+export async function viewFavoriteLocation(authId) {
+  try {
+    const view = await weatherAPI.viewFavorites(authId)
+    console.log({view})
+    return view
+  } catch(err){
+    console.log(err)
   }
 }

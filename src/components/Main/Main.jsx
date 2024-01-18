@@ -2,15 +2,16 @@ import { Routes, Route } from "react-router-dom";
 import WeatherIndex from "../../pages/weatherindex/weatherindex";
 import Profile from "../../pages/Profile";
 import Favorites from "../../pages/Favorites/favorites";
+import WeatherInfo from "../../pages/weatherinfo/weatherinfo"
 import { useState } from "react";
 const Main = () => {
-  const [favorites, setFavorites] = useState([])
   return (
     <div>
       <Routes>
-        <Route path="/" element={<WeatherIndex favorites={favorites} setFavorites={setFavorites}/>} />
+        <Route path="/" element={<WeatherIndex />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/favorites" element={<Favorites favorites={favorites} setFavorites={setFavorites}/>} />
+        <Route path="/favorites" element={<Favorites />} />
+        <Route path="/weather/:id" element={<WeatherInfo />} />
       </Routes>
     </div>
   );

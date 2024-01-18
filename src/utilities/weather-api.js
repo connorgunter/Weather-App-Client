@@ -16,17 +16,35 @@ export async function searchLocation(q) {
 }
 
 
-export async function saveFavorites() {
-  const favoritesData = await fetch(`${config.FAVORITES_URL}`, {
+export async function saveFavorites(data) {
+  const favoritesData = await fetch(config.FAVORITES_URL, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: favoritesData,
+    body: JSON.stringify(data),
   });
-  if (response.ok) {
-    return response.json();
+  console.log(data.authId)
+  if (favoritesData.ok) {
+    return favoritesData.json();
   } else {
     throw new Error("Invalid request");
+  }
+}
+
+export async function viewFavorites(authId) {
+  const data = await fetch(config.FAVORITES_URL+ "/view", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+
+  if (data.ok) {
+    const favoriteData = await data.json();
+    console.log({favoriteData})
+    return favoriteData;
+  } else {
+    console.log("Invalid Location");
   }
 }

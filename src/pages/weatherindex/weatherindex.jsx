@@ -1,16 +1,16 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./weatherindex.css";
 import findLocation from "../../utilities/weather-service";
 import { saveFavoriteLocation } from "../../utilities/weather-service";
 import { useAuth0 } from "@auth0/auth0-react";
-const Index = ({favorites, setFavorites}) => {
+const Index = ({ favorites, setFavorites }) => {
   // const [favorites, setFavorites] = useState([])
   const [searchWeather, setSearchWeather] = useState("");
   const [weather, setWeather] = useState(null);
-  const { user, isLoading: loadingAuth, isAuthenticated } = useAuth0();
-  if (isAuthenticated){
-  const authId = user.sub.substring(user.sub.indexOf("|") + 1);
-  console.log(authId)
+  const { user, isAuthenticated } = useAuth0();
+  if (isAuthenticated) {
+    const authId = user.sub.substring(user.sub.indexOf("|") + 1);
   }
   const getLocation = async (e) => {
     e.preventDefault();
@@ -27,13 +27,12 @@ const Index = ({favorites, setFavorites}) => {
     setSearchWeather(e.target.value);
   };
 
-  const saveToFavorites = () => {
-    setFavorites(prevFavorites => [...prevFavorites, weather])
-    if (isAuthenticated){
-      setFavorites(id=authId)
-    }
+  const saveToFavorites = async () => {
+    const authId = user.sub.substring(user.sub.indexOf("|") + 1);
+    console.log(weather)
+    const saved = await saveFavoriteLocation({authId: authId, favorites: [{name: weather.location.name, locationData:{weather}}]})
+    console.log(saved)
   }
-  console.log(favorites)
 
   return (
     <div>
@@ -43,12 +42,15 @@ const Index = ({favorites, setFavorites}) => {
           value={searchWeather}
           onChange={handleChange}
           placeholder="Search for Location Here"
-        /><br/><br/>
+        />
+        <br />
+        <br />
         <button type="submit">Search Weather By Location</button>
       </form>
       <div>
         {weather ? (
           <div className="weather-card">
+            <Link to={`/weather/${weather.location.name}`}>
             <h2 className="current-temp">{weather.current.temp_f}°F</h2>
             <hr />
             <div className="info-section">
@@ -61,11 +63,12 @@ const Index = ({favorites, setFavorites}) => {
                 Wind Speed: {weather.current.wind_mph} mph, Blowing{" "}
                 {weather.current.wind_dir}
               </h2>
-              <button onClick={saveToFavorites}>Save to Favorites</button>
             </div>
+          </Link>
+              <button onClick={saveToFavorites}>Save to Favorites</button>
           </div>
         ) : (
-          <p>Nothing</p>
+          console.log("No Data Yet")
         )}
       </div>
     </div>
