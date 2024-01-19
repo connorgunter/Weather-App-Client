@@ -48,3 +48,15 @@ export async function viewFavorites(authId) {
     console.log("Invalid Location");
   }
 }
+
+export async function destroy(id) {
+  const url = `${config.FAVORITES_URL}/${id}`;
+  const res = await fetch(url, {
+    method: "DELETE",
+  });
+  if (res.ok) {
+    return res.json();
+  } else {
+    throw new Error("Invalid Request");
+  }
+}

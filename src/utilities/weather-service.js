@@ -29,3 +29,12 @@ export async function viewFavoriteLocation(authId) {
     console.log(err)
   }
 }
+
+export async function deleteFavorite(id) {
+  try {
+    const deletedFavorite = await weatherAPI.destroy(id);
+    return deletedFavorite;
+  } catch (err) {
+    throw err;
+  }
+}

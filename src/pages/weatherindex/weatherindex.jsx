@@ -17,7 +17,7 @@ const Index = ({ favorites, setFavorites }) => {
     try {
       const locationResponse = await findLocation(searchWeather);
       setWeather(locationResponse);
-      console.log(locationResponse.location);
+      console.log(locationResponse);
     } catch (err) {
       console.log(err);
     }
@@ -27,12 +27,15 @@ const Index = ({ favorites, setFavorites }) => {
     setSearchWeather(e.target.value);
   };
 
-  const saveToFavorites = async (save) => {
+  const saveToFavorites = async () => {
     const authId = user.sub.substring(user.sub.indexOf("|") + 1);
-    console.log(weather)
-    const saved = await saveFavoriteLocation({authId: authId, favorites: [{name: weather.location.name, locationData:{weather}}]})
-    console.log(saved)
-  }
+    console.log(weather);
+    const saved = await saveFavoriteLocation({
+      authId: authId,
+      favorites: [{ name: weather.location.name, locationData: { weather } }],
+    });
+    console.log(saved);
+  };
 
   return (
     <div>
@@ -51,7 +54,6 @@ const Index = ({ favorites, setFavorites }) => {
       <div>
         {weather ? (
           <div className="weather-card">
-            <Link to={`/weather/${weather.location.name}`}>
             <h2 className="current-temp">{weather.current.temp_f}°F</h2>
             <hr />
             <div className="info-section">
@@ -65,8 +67,7 @@ const Index = ({ favorites, setFavorites }) => {
                 {weather.current.wind_dir}
               </h2>
             </div>
-          </Link>
-              <button onClick={saveToFavorites(save)}>Save to Favorites</button>
+            <button onClick={saveToFavorites}>Save to Favorites</button>
           </div>
         ) : (
           console.log("No Data Yet")

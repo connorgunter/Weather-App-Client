@@ -10,7 +10,7 @@ const Main = () => {
         <Route path="/" element={<WeatherIndex />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/favorites" element={<Favorites />} />
-        <Route path="/weather/:id" element={<WeatherInfo />} />
+        <Route path="/favorites/:id" element={<WeatherInfo />} />
       </Routes>
     </div>
   );
