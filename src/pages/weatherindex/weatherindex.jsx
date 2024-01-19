@@ -27,7 +27,7 @@ const Index = ({ favorites, setFavorites }) => {
     setSearchWeather(e.target.value);
   };
 
-  const saveToFavorites = async () => {
+  const saveToFavorites = async (save) => {
     const authId = user.sub.substring(user.sub.indexOf("|") + 1);
     console.log(weather)
     const saved = await saveFavoriteLocation({authId: authId, favorites: [{name: weather.location.name, locationData:{weather}}]})
@@ -42,6 +42,7 @@ const Index = ({ favorites, setFavorites }) => {
           value={searchWeather}
           onChange={handleChange}
           placeholder="Search for Location Here"
+          required={true}
         />
         <br />
         <br />
@@ -65,7 +66,7 @@ const Index = ({ favorites, setFavorites }) => {
               </h2>
             </div>
           </Link>
-              <button onClick={saveToFavorites}>Save to Favorites</button>
+              <button onClick={saveToFavorites(save)}>Save to Favorites</button>
           </div>
         ) : (
           console.log("No Data Yet")

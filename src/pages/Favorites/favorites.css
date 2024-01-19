@@ -1,0 +1,12 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px; 
+    padding: 20px;
+}
+
+.fav-loc-card {
+    text-align: center;
+    border: solid 2px black;
+}
+
