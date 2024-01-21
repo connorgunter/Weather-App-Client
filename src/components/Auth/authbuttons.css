@@ -1,0 +1,29 @@
+.login,
+.logout {
+    margin-left: 5px;
+    align-items: center;
+    background-color: #6a9ca7;
+    border-radius: 12px;
+    box-shadow: transparent 0 0 0 3px,rgba(18, 18, 18, .1) 0 6px 20px;
+    box-sizing: border-box;
+    color: #2b5366;
+    cursor: pointer;
+    display: inline-flex;
+    font-weight: 700;
+    justify-content: center;
+    line-height: 1;
+    outline: none;
+    padding: 1rem 1.2rem;
+    text-align: center;
+    text-decoration: none;
+    transition: box-shadow .2s,-webkit-box-shadow .2s;
+    white-space: nowrap;
+    border: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  .logout:hover,
+  .login:hover {
+    box-shadow: #fff 0 0 0 1px, transparent 0 0 0 0;
+  }
