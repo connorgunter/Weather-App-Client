@@ -38,3 +38,17 @@ export async function deleteFavorite(id) {
     throw err;
   }
 }
+
+
+export async function getFavorite(id) {
+  try {
+    const weatherId = await weatherAPI.show(id);
+    if (weatherId) {
+      return weatherId;
+    } else {
+      console.log("no favorite found", id);
+    }
+  } catch (err) {
+    console.log(err.message);
+  }
+}

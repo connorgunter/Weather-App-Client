@@ -81,7 +81,7 @@
   font-size: 150px;
 }
 
-
+.save-btn,
 .search-btn {
   margin-left: 5px;
   align-items: center;
@@ -105,4 +105,10 @@
 
 .search-btn:hover {
   box-shadow: black 0 0 0 1px, transparent 0 0 0 0;
+}
+
+.btn-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

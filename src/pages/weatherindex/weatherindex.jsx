@@ -55,7 +55,7 @@ const Index = ({ favorites, setFavorites }) => {
         <button className="search-btn" type="submit">Search</button>
       </form>
       ) : (
-        console.log("No Data Yet"))}
+        null)}
       <div>
         {weather ? (
           <div className="weather-card">
@@ -71,10 +71,12 @@ const Index = ({ favorites, setFavorites }) => {
                 {weather.current.wind_dir}
               </h2>
             </div>
-            <button onClick={saveToFavorites}>Save to Favorites</button>
+            <div className="btn-box">
+            <button className="save-btn" onClick={saveToFavorites}>Save to Favorites</button>
+            </div>
           </div>
         ) : (
-          console.log("No Data Yet")
+          null
         )}
       </div>
     </div>

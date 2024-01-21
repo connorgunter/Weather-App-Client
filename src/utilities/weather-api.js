@@ -60,3 +60,12 @@ export async function destroy(id) {
     throw new Error("Invalid Request");
   }
 }
+
+export async function show(id) {
+  const res = await fetch(config.FAVORITES_URL + `/${id}`, { method: "GET" });
+  if (res.ok) {
+    return res.json();
+  } else {
+    console.log(err.message);
+  }
+}
