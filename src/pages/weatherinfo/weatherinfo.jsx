@@ -6,6 +6,9 @@ const WeatherInfo = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   
+
+
+
   const handleDelete = async () => {
     try {
 

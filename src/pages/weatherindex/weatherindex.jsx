@@ -38,18 +38,19 @@ const Index = ({ favorites, setFavorites }) => {
   };
 
   return (
-    <div>
+    <div className="index-body">
       <form className="search-box" onSubmit={getLocation}>
+        <div className="inputBox">
         <input
-          className="input-field"
           value={searchWeather}
           onChange={handleChange}
-          placeholder="Search for Location Here"
           required={true}
         />
+        <span>Search Location</span>
+        </div>
         <br />
         <br />
-        <button type="submit">Search Weather By Location</button>
+        <button className="search-btn" type="submit">Search</button>
       </form>
       <div>
         {weather ? (
