@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <header>
       <nav className="left-nav">
-        <img className="logo" src="../../public/images/cropped-logo.png"/>
+        <img className="logo" src="../../images/cropped-logo.png"/>
         <Link to="/">Home</Link>
         <Link to="/favorites">Saved</Link>
 
