@@ -4,6 +4,7 @@ import "./weatherindex.css";
 import findLocation from "../../utilities/weather-service";
 import { saveFavoriteLocation } from "../../utilities/weather-service";
 import { useAuth0 } from "@auth0/auth0-react";
+import moment from "moment";
 const Index = ({ favorites, setFavorites }) => {
   // const [favorites, setFavorites] = useState([])
   const [searchWeather, setSearchWeather] = useState("");
@@ -39,6 +40,7 @@ const Index = ({ favorites, setFavorites }) => {
 
   return (
     <div className="index-body">
+      {!weather ? (
       <form className="search-box" onSubmit={getLocation}>
         <div className="inputBox">
         <input
@@ -52,15 +54,16 @@ const Index = ({ favorites, setFavorites }) => {
         <br />
         <button className="search-btn" type="submit">Search</button>
       </form>
+      ) : (
+        console.log("No Data Yet"))}
       <div>
         {weather ? (
           <div className="weather-card">
             <h2 className="current-temp">{weather.current.temp_f}°F</h2>
-            <hr />
             <div className="info-section">
               <h1>
                 Weather for: {weather.location.name} on{" "}
-                {weather.forecast.forecastday[0].date}
+                {moment(weather.forecast.forecastday[0].date).format("L")}
               </h1>
               <h2>Condition: {weather.current.condition.text}</h2>
               <h2>

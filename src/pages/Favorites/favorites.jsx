@@ -33,7 +33,7 @@ const Favorites = () => {
       <div className="grid-container">
         {userFavorites[0]?.favorites.map((favorite, index) => (
           <div key={index} className="fav-loc-card">
-            <Link to={`/favorites/${favorite._id}`}> {/* Assuming each favorite has an 'id' field */}
+            <Link className="details-link" to={`/favorites/${favorite._id}`}>
               <h1>{favorite.name}</h1>
               <h2>{favorite.locationData.weather.current.temp_f}°F</h2>
               <h2>Wind Speed: {favorite.locationData.weather.current.wind_mph} MPH</h2>

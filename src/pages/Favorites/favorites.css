@@ -8,5 +8,16 @@
 .fav-loc-card {
     text-align: center;
     border: solid 2px black;
+    border-radius: 20px;
+    background: #2b5366;
+}
+
+.details-link {
+    text-decoration: none;
+    color: black;
+}
+
+.details-link:visited {
+    color: black;
 }
 
