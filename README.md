@@ -30,11 +30,6 @@ Explore every detail of your saved locations on this comprehensive page.
 
 <img width="1440" alt="Screen Shot 2024-01-22 at 8 12 08 AM" src="https://github.com/connorgunter/Weather-App-Client/assets/31771870/8a744e30-495a-4554-a485-3008a6e7deca">
 
-## 🧭 Location Discovery
-Haven't decided where to go? Our location search provides you with a curated list of destinations to choose from.
-
-<img width="1440" alt="Screen Shot 2023-12-22 at 1 24 54 AM" src="https://github.com/bsong1124/trip-planner-client/assets/31771870/f1a012e8-36dd-4586-bf3e-c7f2023a4a92">
-
 ## 💬 About Forecast Fusion
 Learn more about us and find answers to your queries.
 
