@@ -2,7 +2,7 @@
 Discover the weather with a glance! Forecast Fountain delivers real-time weather updates, forecasts, and save weather locations directly to your account, ensuring you're always prepared. Simple, intuitive, and beautifully designed, it's the perfect daily companion for all your weather needs.
 
 ## Getting Started
-Link to our app: 
+Link to app: 
 [Forecast Fountain](https://forecastfountain.netlify.app/)
 
 ## 🏠 Home Sweet Home
