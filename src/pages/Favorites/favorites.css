@@ -28,3 +28,13 @@
     text-align: center;
     font-family: "Bitter";
 }
+
+.login-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.head {
+    text-align: center;
+}

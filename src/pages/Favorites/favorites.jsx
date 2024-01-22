@@ -28,7 +28,14 @@ const Favorites = () => {
   return (
     <>
       {!isAuthenticated ? (
-        <LoginButton />
+        <div>
+        <div className="head">
+          <h1>Login to view saved locations</h1>
+          </div>
+        <div className="login-btn">
+        <LoginButton className="btn"/>
+        </div>
+        </div>
       ) : (
         <>
           <h1 className="fav-header">Saved Locations</h1>

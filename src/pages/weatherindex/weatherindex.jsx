@@ -5,6 +5,7 @@ import findLocation from "../../utilities/weather-service";
 import { saveFavoriteLocation } from "../../utilities/weather-service";
 import { useAuth0 } from "@auth0/auth0-react";
 import moment from "moment";
+import { redirect } from "react-router";
 const Index = () => {
   const [searchWeather, setSearchWeather] = useState("");
   const [weather, setWeather] = useState(null);
@@ -35,6 +36,7 @@ const Index = () => {
       favorites: [{ name: weather.location.name, locationData: { weather } }],
     });
     console.log(saved);
+    redirect("/")
   };
 
   return (
