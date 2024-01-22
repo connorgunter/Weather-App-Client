@@ -5,7 +5,7 @@ import findLocation from "../../utilities/weather-service";
 import { saveFavoriteLocation } from "../../utilities/weather-service";
 import { useAuth0 } from "@auth0/auth0-react";
 import moment from "moment";
-import { useHistory } from "react-router-dom"; // Changed from `redirect` to `useHistory`
+import useHistory from "react-router-dom"; // Changed from `redirect` to `useHistory`
 
 const Index = () => {
   const [searchWeather, setSearchWeather] = useState("");
