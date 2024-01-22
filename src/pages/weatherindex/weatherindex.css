@@ -75,6 +75,7 @@
   background-color: #2b5366;
   border-radius: 20px;
   color: #acacb4;
+  font-family: Bitter, sans-serif;
 }
 
 .current-temp {
@@ -101,6 +102,7 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  font-family: Bitter, sans-serif;
 }
 
 .search-btn:hover {

@@ -31,9 +31,7 @@ const WeatherInfo = () => {
   return (
     <>
       {fav ? (
-        <div>
-          <h1>Weather Details Page</h1>
-          <button onClick={handleDelete}>Remove From Favorites</button>
+        <div className="details-container">
           <h1>{fav.name}</h1>
           <h2>Feels Like:{fav.locationData.weather.current.feelslike_f}</h2>
           <h2>Wind Speed:{fav.locationData.weather.current.wind_mph}</h2>
@@ -61,6 +59,7 @@ const WeatherInfo = () => {
           ) : (
             <h2>Will it rain? Yes</h2>
           )}
+          <button className="remove-btn" onClick={handleDelete}>Remove From Favorites</button>
         </div>
       ) : (
         <p>Loading...</p>
