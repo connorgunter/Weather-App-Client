@@ -5,21 +5,20 @@ import findLocation from "../../utilities/weather-service";
 import { saveFavoriteLocation } from "../../utilities/weather-service";
 import { useAuth0 } from "@auth0/auth0-react";
 import moment from "moment";
-import useHistory from "react-router-dom"; // Changed from `redirect` to `useHistory`
 
 const Index = () => {
   const [searchWeather, setSearchWeather] = useState("");
   const [weather, setWeather] = useState(null);
-  const [isSaved, setIsSaved] = useState(false); // New state to track save status
+  const [isSaved, setIsSaved] = useState(false);
   const { user, isAuthenticated } = useAuth0();
-  const history = useHistory(); // Using useHistory for redirection
+  const history = useHistory();
 
   const getLocation = async (e) => {
     e.preventDefault();
     try {
       const locationResponse = await findLocation(searchWeather);
       setWeather(locationResponse);
-      setIsSaved(false); // Reset isSaved when searching for a new location
+      setIsSaved(false);
       console.log(locationResponse);
     } catch (err) {
       console.log(err);
@@ -38,8 +37,7 @@ const Index = () => {
       favorites: [{ name: weather.location.name, locationData: { weather } }],
     });
     console.log(saved);
-    setIsSaved(true); // Set isSaved to true after saving
-    history.push("/"); // Redirect using useHistory
+    setIsSaved(true);
   };
 
   return (
