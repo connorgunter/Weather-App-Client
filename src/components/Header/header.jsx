@@ -16,7 +16,7 @@ const Header = () => {
           {!isLoading ? (
             isAuthenticated ? (
               <span>
-                <Link to="/profile">
+                <Link to="/favorites">
                   <img
                     className="user-img"
                     src={user.picture}
