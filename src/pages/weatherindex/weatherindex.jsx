@@ -70,6 +70,7 @@ const Index = () => {
                 {weather.current.wind_dir}
               </h2>
             </div>
+            <br />
             <div className="btn-box">
               {!isAuthenticated ? (
             <LoginButton />
