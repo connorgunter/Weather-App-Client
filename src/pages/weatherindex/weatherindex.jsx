@@ -1,12 +1,11 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import LoginButton from "../../components/Auth/LoginButton";
 import "./weatherindex.css";
 import findLocation from "../../utilities/weather-service";
 import { saveFavoriteLocation } from "../../utilities/weather-service";
 import { useAuth0 } from "@auth0/auth0-react";
 import moment from "moment";
-const Index = ({ favorites, setFavorites }) => {
-  // const [favorites, setFavorites] = useState([])
+const Index = () => {
   const [searchWeather, setSearchWeather] = useState("");
   const [weather, setWeather] = useState(null);
   const { user, isAuthenticated } = useAuth0();
@@ -72,7 +71,10 @@ const Index = ({ favorites, setFavorites }) => {
               </h2>
             </div>
             <div className="btn-box">
-            <button className="save-btn" onClick={saveToFavorites}>Save to Favorites</button>
+              {!isAuthenticated ? (
+            <LoginButton />
+              ) : (<button className="save-btn" onClick={saveToFavorites}>Save to Favorites</button>
+              )}
             </div>
           </div>
         ) : (

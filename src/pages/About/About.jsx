@@ -1,6 +1,7 @@
+import "./About.css"
 const About = () => {
   return (
-    <>
+    <div className="about-card">
       <h1>About</h1>
       <p>
         Discover the weather with a glance! Forecast Fountain delivers real-time
@@ -9,7 +10,7 @@ const About = () => {
         beautifully designed, it's the perfect daily companion for all your
         weather needs.
       </p>
-    </>
+    </div>
   );
 };
 

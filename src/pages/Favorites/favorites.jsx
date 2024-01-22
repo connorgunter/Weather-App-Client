@@ -26,7 +26,7 @@ const Favorites = () => {
 
   return (
     <>
-    <h1>Favorites Page</h1>
+    <h1 className="fav-header">Saved Locations</h1>
     {userFavorites === null ? (
       <h1>Loading...</h1>
     ) : userFavorites.length > 0 ? (
