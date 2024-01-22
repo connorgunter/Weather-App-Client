@@ -33,7 +33,7 @@ Explore every detail of your saved locations on this comprehensive page.
 ## 💬 About Forecast Fusion
 Learn more about us and find answers to your queries.
 
-<img width="1440" alt="Screen Shot 2024-01-22 at 8 14 39 AM" src="https://github.com/connorgunter/Weather-App-Client/assets/31771870/5805a5a6-43dd-493f-ae1e-2607d8c3ce90">
+<img width="720" alt="Screen Shot 2024-01-22 at 9 02 44 AM" src="https://github.com/connorgunter/Weather-App-Client/assets/31771870/ab573227-f6b6-4b1d-8ba0-99106d483126">
 
 
 ## 💻 Technologies Used
