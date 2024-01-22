@@ -9,8 +9,8 @@ const Header = () => {
     <header>
       <nav className="left-nav">
         <img className="logo" src="../../images/cropped-logo.png"/>
-        <Link to="/">Home</Link>
-        <Link to="/favorites">Saved</Link>
+        <Link className="nav-link" to="/">Home</Link>
+        <Link className="nav-link" to="/favorites">Saved</Link>
 
         <div className="right-nav">
           {!isLoading ? (

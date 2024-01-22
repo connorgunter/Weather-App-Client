@@ -1,8 +1,8 @@
 .left-nav {
   text-decoration: none;
-  color: white;
+  color: #6a9ca7;
   border-radius: 12px;
-  background-color: black;
+  background-color: #254053;
   padding: 10px;
 }
 
@@ -15,11 +15,11 @@ a:visited {
 }
 
 a:hover {
-  color: black;
-  background-color: white;
+  color: #254053;
+  background-color:#6a9ca7 ;
   border-radius: 10px;
-  padding:5px;
-  margin: -5px;
+  padding:10px;
+  margin: -10px;
 }
 
 .left-nav, .right-nav {
@@ -31,7 +31,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 10px; /* Adjust the padding as needed */
+  padding: 0 10px;
 }
 
 .right-nav span, .right-nav a {
@@ -47,4 +47,8 @@ nav {
 .logo {
   width: 50px;
   border-radius: 50%;
+}
+
+.nav-link {
+
 }
