@@ -11,7 +11,6 @@ const Index = () => {
   const [weather, setWeather] = useState(null);
   const [isSaved, setIsSaved] = useState(false);
   const { user, isAuthenticated } = useAuth0();
-  const history = useHistory();
 
   const getLocation = async (e) => {
     e.preventDefault();
