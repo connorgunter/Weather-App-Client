@@ -30,7 +30,7 @@ Explore every detail of your saved locations on this comprehensive page.
 
 <img width="1440" alt="Screen Shot 2024-01-22 at 8 12 08 AM" src="https://github.com/connorgunter/Weather-App-Client/assets/31771870/8a744e30-495a-4554-a485-3008a6e7deca">
 
-## 💬 About Forecast Fusion
+## 💬 About Forecast Fountain
 Learn more about us and find answers to your queries.
 
 <img width="720" alt="Screen Shot 2024-01-22 at 9 02 44 AM" src="https://github.com/connorgunter/Weather-App-Client/assets/31771870/ab573227-f6b6-4b1d-8ba0-99106d483126">
